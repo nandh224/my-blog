@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>픽셀 아트 에디터</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back-link" href="../../index.html">← 블로그로</a>
+
+  <header class="editor-header">
+    <h1>픽셀 아트 에디터</h1>
+    <p class="hint">클릭/드래그로 칠하기 · 16×16 격자</p>
+  </header>
+
+  <div class="editor-layout">
+    <div class="canvas-area">
+      <canvas id="grid" width="16" height="16"></canvas>
+    </div>
+
+    <div class="side-panel">
+      <div class="palette">
+        <div class="swatches" id="swatches">
+          <button type="button" class="swatch" style="background:#000000" data-color="#000000" aria-label="검정"></button>
+          <button type="button" class="swatch" style="background:#ffffff" data-color="#ffffff" aria-label="흰색"></button>
+          <button type="button" class="swatch" style="background:#888888" data-color="#888888" aria-label="회색"></button>
+          <button type="button" class="swatch" style="background:#e53935" data-color="#e53935" aria-label="빨강"></button>
+          <button type="button" class="swatch" style="background:#fb8c00" data-color="#fb8c00" aria-label="주황"></button>
+          <button type="button" class="swatch" style="background:#fdd835" data-color="#fdd835" aria-label="노랑"></button>
+          <button type="button" class="swatch" style="background:#43a047" data-color="#43a047" aria-label="초록"></button>
+          <button type="button" class="swatch" style="background:#1e88e5" data-color="#1e88e5" aria-label="파랑"></button>
+          <button type="button" class="swatch" style="background:#5e35b1" data-color="#5e35b1" aria-label="보라"></button>
+          <button type="button" class="swatch" style="background:#8d6e63" data-color="#8d6e63" aria-label="갈색"></button>
+          <button type="button" class="swatch" style="background:#d81b60" data-color="#d81b60" aria-label="분홍"></button>
+          <button type="button" class="swatch" style="background:#00acc1" data-color="#00acc1" aria-label="청록"></button>
+        </div>
+        <div class="custom-color">
+          <label for="custom-color-input">커스텀</label>
+          <input type="color" id="custom-color-input" value="#000000">
+          <span class="current-color-preview" id="current-color-preview" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="tools">
+        <button type="button" id="eraser-btn" aria-pressed="false">지우개</button>
+        <button type="button" id="clear-btn">전체 지우기</button>
+        <button type="button" id="save-btn">PNG로 저장</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="editor.js" defer></script>
+</body>
+</html>

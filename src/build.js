@@ -17,6 +17,11 @@ const apps = [
     path: "2048",
     description: "방향키로 숫자 타일을 밀어 합치는 퍼즐 게임",
   },
+  {
+    name: "픽셀 아트 에디터",
+    path: "pixel-art",
+    description: "16x16 격자에 도트를 찍어 그림을 그리고 PNG로 저장",
+  },
 ];
 
 // spec.md, review.md 등 계획/검토 문서는 정적 사이트에 노출하지 않는다.

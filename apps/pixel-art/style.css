@@ -1,0 +1,196 @@
+:root {
+  --bg: #faf8f0;
+  --text: #2d2d2d;
+  --text-muted: #7a7267;
+  --canvas-bg: #ffffff;
+  --panel-bg: #f0ece2;
+  --swatch-border: #d8d2c4;
+  --swatch-border-selected: #2d2d2d;
+  --button-bg: #8f7a66;
+  --button-text: #f9f6f2;
+  --button-active-bg: #5e4f41;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1a17;
+    --text: #ede8e0;
+    --text-muted: #a39c90;
+    --canvas-bg: #2a2723;
+    --panel-bg: #262320;
+    --swatch-border: #4a443c;
+    --swatch-border-selected: #ede8e0;
+    --button-bg: #a3907a;
+    --button-text: #1c1a17;
+    --button-active-bg: #c9b8a4;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", sans-serif;
+  min-height: 100vh;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.editor-header {
+  margin-bottom: 20px;
+}
+
+.editor-header h1 {
+  font-size: 2rem;
+  margin: 0 0 6px;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.editor-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.canvas-area {
+  display: flex;
+  justify-content: center;
+}
+
+#grid {
+  width: 100%;
+  max-width: 384px;
+  aspect-ratio: 1;
+  background: var(--canvas-bg);
+  border-radius: 8px;
+  image-rendering: pixelated;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.palette {
+  background: var(--panel-bg);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 3px solid var(--swatch-border);
+  padding: 0;
+  cursor: pointer;
+}
+
+.swatch.selected {
+  border-color: var(--swatch-border-selected);
+}
+
+.custom-color {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.custom-color label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+#custom-color-input {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+}
+
+.current-color-preview {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 3px solid var(--swatch-border-selected);
+  margin-left: auto;
+}
+
+.tools {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tools button {
+  flex: 1 1 auto;
+  min-width: 40px;
+  min-height: 44px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#eraser-btn.active {
+  background: var(--button-active-bg);
+}
+
+@media (min-width: 640px) {
+  .editor-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .canvas-area {
+    flex: 1;
+  }
+
+  .side-panel {
+    width: 260px;
+    flex-shrink: 0;
+  }
+}
