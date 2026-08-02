@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>2048</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back-link" href="../../index.html">← 블로그로</a>
+
+  <header class="game-header">
+    <h1>2048</h1>
+    <div class="scores">
+      <div class="score-box">
+        <span class="score-label">SCORE</span>
+        <span id="score">0</span>
+      </div>
+      <div class="score-box">
+        <span class="score-label">BEST</span>
+        <span id="best-score">0</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="controls-row">
+    <p class="hint">화살표 키 또는 스와이프로 이동</p>
+    <button id="restart" type="button">새 게임</button>
+  </div>
+
+  <div class="board-container">
+    <div id="board">
+      <!-- 배경 셀 16개 -->
+      <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+      <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+      <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+      <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+      <!-- 타일은 game.js가 동적으로 이 위에 렌더링 -->
+    </div>
+
+    <div id="game-message" class="game-message" hidden>
+      <p id="game-message-text"></p>
+      <div class="game-message-buttons">
+        <button id="keep-playing" type="button" hidden>계속하기</button>
+        <button id="try-again" type="button">새 게임</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="game.js" defer></script>
+</body>
+</html>

@@ -48,7 +48,7 @@ ${bodyHtml}
 `;
 }
 
-export function indexPage(posts) {
+export function indexPage(posts, apps = []) {
   const items = posts
     .map(
       (p) => `  <li class="post-item">
@@ -61,7 +61,33 @@ export function indexPage(posts) {
   return `<h1>글 목록</h1>
 <ul class="post-list">
 ${items}
-</ul>`;
+</ul>
+${appsSection(apps)}`;
+}
+
+function appsSection(apps) {
+  if (apps.length === 0) return "";
+
+  const cards = apps
+    .map(
+      (app) => `  <li class="app-card">
+    <a class="app-card-link" href="apps/${app.path}/index.html">
+      <iframe class="app-card-preview" src="apps/${app.path}/index.html" title="${escapeHtml(app.name)} 미리보기" tabindex="-1" loading="lazy"></iframe>
+      <div class="app-card-info">
+        <h3>${escapeHtml(app.name)}</h3>
+        <p>${escapeHtml(app.description)}</p>
+      </div>
+    </a>
+  </li>`
+    )
+    .join("\n");
+
+  return `<section class="apps-section">
+  <h2>미니 웹앱</h2>
+  <ul class="app-list">
+${cards}
+  </ul>
+</section>`;
 }
 
 export function postPage(post) {
