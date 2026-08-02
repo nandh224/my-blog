@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>타이머 / 스톱워치</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back-link" href="../../index.html">← 블로그로</a>
+
+  <header class="app-header">
+    <h1>타이머 / 스톱워치</h1>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button type="button" id="tab-countdown" class="tab active" role="tab" aria-selected="true">카운트다운</button>
+    <button type="button" id="tab-stopwatch" class="tab" role="tab" aria-selected="false">스톱워치</button>
+  </div>
+
+  <section id="countdown-panel" class="panel">
+    <div class="time-inputs">
+      <label class="time-input-group">
+        <span class="time-input-label">분</span>
+        <input type="number" id="cd-minutes" inputmode="numeric" min="0" max="999" value="5">
+      </label>
+      <label class="time-input-group">
+        <span class="time-input-label">초</span>
+        <input type="number" id="cd-seconds" inputmode="numeric" min="0" max="59" value="0">
+      </label>
+    </div>
+    <div id="cd-display" class="time-display">05:00</div>
+    <p id="cd-status" class="status-text" hidden aria-live="polite">시간 종료!</p>
+  </section>
+
+  <section id="stopwatch-panel" class="panel" hidden>
+    <div id="sw-display" class="time-display">00:00.0</div>
+  </section>
+
+  <div class="controls">
+    <button type="button" id="btn-toggle" class="btn btn-primary">시작</button>
+    <button type="button" id="btn-reset" class="btn">리셋</button>
+  </div>
+
+  <footer class="hint-footer">
+    <p>카운트다운: 분/초를 입력한 뒤 시작을 누르세요. 스톱워치: 시작을 누르면 바로 측정이
+    시작됩니다. 일시정지 후 다시 시작하면 이어서 진행됩니다. 다른 탭으로 이동하면 진행 중인
+    타이머는 자동으로 일시정지됩니다. 카운트다운이 끝난 뒤 다시 시작하려면 먼저 리셋을
+    눌러주세요.</p>
+  </footer>
+</div>
+
+<script src="timer.js" defer></script>
+</body>
+</html>

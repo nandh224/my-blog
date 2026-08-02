@@ -22,6 +22,11 @@ const apps = [
     path: "pixel-art",
     description: "16x16 격자에 도트를 찍어 그림을 그리고 PNG로 저장",
   },
+  {
+    name: "타이머 / 스톱워치",
+    path: "timer",
+    description: "카운트다운 타이머와 스톱워치, 시작·일시정지·리셋으로 시간을 측정",
+  },
 ];
 
 // spec.md, review.md 등 계획/검토 문서는 정적 사이트에 노출하지 않는다.
