@@ -1,0 +1,12 @@
+{
+  "name": "my-blog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node src/build.js",
+    "dev": "node scripts/serve.js"
+  },
+  "dependencies": {
+    "marked": "^14.1.2"
+  }
+}
